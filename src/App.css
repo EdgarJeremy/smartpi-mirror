@@ -1,0 +1,133 @@
+@charset "utf8";
+@import url(https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap);
+
+body {
+  font-family: 'Lato';
+  background-color: #000000;
+  color: #ffffff;
+}
+.announcements {
+  padding-top: 20px;
+  font-size: 30px;
+  /* font-weight: bold; */
+}
+.world-info {
+  padding: 20px;
+  width: 100%;
+  display: inline-block;
+}
+.clock {
+  display: inline-block;
+  float: left;
+  padding: 20px 20px;
+}
+.weather {
+  display: inline-block;
+  float: right;
+  /* width: 100px; */
+}
+.weather-card {
+  width: 250px;
+  height: 150px;
+  background-color: transparent;
+}
+.weather-card h1, .weather-card p {
+  color: #ffffff;
+}
+.react-clock__hand__body {
+  background-color: #ffffff !important;
+}
+.react-clock__mark__body {
+  background-color: #ffffff !important;
+}
+.greetings {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;;
+}
+
+.agendas {
+  position: fixed;
+  bottom: 30px;
+  left: 0px;
+  right: 0;
+}
+
+:root {
+  font-size: calc(1vw + 1vh);
+  --bgColor: #000000;
+  --mainColor: white;
+  --linkColor: orange;
+}
+
+.timeline, .timeline * {
+  margin: 0;
+  padding: 0;
+}
+
+.timeline {
+	position: relative;
+	display: grid;
+	gap: 25px;
+	max-width: 75%;
+  list-style-type: none;
+	}
+
+.timeline .timeline__line {
+	position: absolute;
+	top: 0;
+	left: .4rem;
+	width: .1rem;
+	height: 100%;
+	background: var(--mainColor);
+	}
+
+.timeline .timeline__item .info {
+	display: grid;
+	grid-template-columns: repeat(3, auto) 1fr;
+	align-items: center;
+	gap: 0.25rem;
+	}
+
+.timeline .timeline__item .info a {
+	text-decoration: none;
+	color: var(--linkColor);
+  font: 300 16px "Oswald", sans-serif;
+	}
+
+.timeline .timeline__item .info .dot {
+	position: relative;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	}
+
+.timeline .timeline__item .info .dot::before {
+	position: absolute;
+	content: "";
+	top: -.25rem;
+	left: -.25rem;
+	right: -.25rem;
+	bottom: -.25rem;
+	background-color: var(--bgColor);
+  border-radius: inherit;
+	}
+
+.timeline .timeline__item .info .dot::after {
+	position: absolute;
+	content: "";
+	top: 25%;
+	left: 25%;
+	width: .5rem;
+	height: .5rem;
+	border: .25rem solid var(--mainColor);
+	border-radius: inherit;
+	}
+
+.timeline .timeline__item .info .time {
+  margin-right: .5rem;
+}
+
+.timeline .timeline__item .content {
+	margin: 1rem 0 0 3.5rem;
+}
