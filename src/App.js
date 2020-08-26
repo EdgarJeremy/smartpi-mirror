@@ -44,15 +44,13 @@ class App extends React.Component {
   componentDidMount() {
     adapter.connect().then((models) => {
       this.setState({ models }, () => {
-        this.fetchAnnouncements();
-        this.fetchAgendas();
+        setInterval(() => {
+          this.setState({ now: new Date() });
+          this.fetchAnnouncements();
+          this.fetchAgendas();
+        }, 1000);
       });
     });
-    setInterval(() => {
-      this.setState({ now: new Date() });
-      this.fetchAnnouncements();
-      this.fetchAgendas();
-    }, 1000);
   }
   render() {
     const { now, announcements, agendas } = this.state;
@@ -85,7 +83,7 @@ class App extends React.Component {
                   <div className="info">
                     <div className="dot"></div>
                     <time className="time">{ag.time}</time>
-                    <h4 className="title">{ag.date}</h4>
+                    <h4 className="title">{ag.description}</h4>
                   </div>
                 </li>
               ) : (
@@ -93,7 +91,7 @@ class App extends React.Component {
                     <div className="info">
                       <div className="dot"></div>
                       <time className="time">{ag.time}</time>
-                      <h4 className="title">{ag.date}</h4>
+                      <h4 className="title">{ag.description}</h4>
                     </div>
                   </li>
                 )
